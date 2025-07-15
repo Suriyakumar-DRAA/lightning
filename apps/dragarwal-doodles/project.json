@@ -22,7 +22,11 @@
             "input": "apps/dragarwal-doodles/public"
           }
         ],
-        "styles": ["apps/dragarwal-doodles/src/styles.scss"]
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "node_modules/bootstrap-icons/font/bootstrap-icons.css",
+          "apps/dragarwal-doodles/src/styles.scss"
+        ]
       },
       "configurations": {
         "production": {

@@ -1,3 +1,33 @@
+<!-- Bootstrap 5 Example -->
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12">
+            <h3 class="text-primary">
+                <i class="bi bi-lightning-charge-fill"></i>
+                Lightning Angular App with Bootstrap 5
+            </h3>
+
+        </div>
+    </div>
+</div>
+
+<!-- Your existing components -->
 <!-- <app-nx-welcome></app-nx-welcome> -->
-<dragarwal-doodles-textbox></dragarwal-doodles-textbox>
+<div class="card m-4">
+    <div class="card-body">
+        <h5 class="card-title">Textbox Library Debug Example</h5>
+        
+        <form #profileForm="ngForm" novalidate>
+            <lightning-textbox 
+                label="Name" 
+                placeholder="Enter your name" 
+                type="text" 
+                [(ngModel)]="appointment.name" 
+                name="name"
+                [maxLength]="12" 
+                [required]="true">
+            </lightning-textbox>
+        </form>
+    </div>
+</div>
 <router-outlet></router-outlet>
