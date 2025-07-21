@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --body-bg-color: #f9f9f9;
+    --primary-font-family: "Inter", sans-serif;
+    --bs-body-font-size: 1rem;
+    --bs-body-font-weight: 400;
+    --bs-body-line-height: 1.5;
+}
+
+body {
+    font-family: var(--primary-font-family);
+    background: var(--body-bg-color);
+    color: #444444;
+    font-size: var(--bs-body-font-size);
+    font-weight: var(--bs-body-font-weight);
+    line-height: var(--bs-body-line-height);
+}

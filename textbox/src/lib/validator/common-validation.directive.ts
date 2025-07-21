@@ -9,13 +9,20 @@ import { CommonModule } from '@angular/common';
     providers: [{ provide: NG_VALIDATORS, useExisting: CommonValidationDirective, multi: true }]
 })
 export class CommonValidationDirective implements Validator {
-    @Input('required') required = false;
-    @Input('minLength') minLength: number | null = null;
-    @Input('maxLength') maxLength: number | null = null;
-    @Input('appDecimalValidation') digit: number | null = null;
+    @Input() required = false;
+    @Input() minLength: number | null = null;
+    @Input() maxLength: number | null = null;
     @Input() allowedChars: 'alphanumeric-hyphen' | 'numeric' | 'alphanumeric' | 'alpha' | null = null;
 
     validate(control: AbstractControl): ValidationErrors | null {
+        console.log('🔍 CommonValidationDirective.validate called', {
+            value: control.value,
+            required: this.required,
+            minLength: this.minLength,
+            maxLength: this.maxLength,
+            allowedChars: this.allowedChars
+        });
+        
         const errors: ValidationErrors = {};
         const value = control.value;
         if (typeof value === 'string' && value.trim().length > 0 && value.startsWith(' ')) {

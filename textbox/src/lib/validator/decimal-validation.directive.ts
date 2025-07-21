@@ -13,13 +13,23 @@ export class DecimalValidationDirective implements Validator {
     digit: number | null = null;
 
     validate(control: AbstractControl): ValidationErrors | null {
+        debugger
+        console.log('🔢 DecimalValidationDirective.validate called', {
+            value: control.value,
+            digit: this.digit
+        });
+        
         const value = control.value;
         if (this.digit === null || value === null || value === '') return null;
         const stringValue = String(value);
-        if (!/^-?\d*\.?\d*$/.test(stringValue)) return { number: true };
+        if (!/^-?\d*\.?\d*$/.test(stringValue)) {
+            console.log('❌ Decimal validation failed - not a number:', stringValue);
+            return { number: true };
+        }
         if (stringValue.includes('.')) {
             const decimalPart = stringValue.split('.')[1];
             if (decimalPart && decimalPart.length > this.digit) {
+                console.log('❌ Decimal validation failed - too many digits:', decimalPart.length, 'max:', this.digit);
                 return { maxdigits: { required: this.digit, actual: decimalPart.length } };
             }
         }

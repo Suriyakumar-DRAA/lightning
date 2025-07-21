@@ -15,6 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@lightning/datepicker": ["datepicker/src/index.ts"],
+      "@lightning/dropdown": ["dropdown/src/index.ts"],
       "@lightning/textbox": ["textbox/src/index.ts"]
     }
   },
