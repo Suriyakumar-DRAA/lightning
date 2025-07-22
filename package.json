@@ -4,6 +4,10 @@
   "license": "MIT",
   "scripts": {
     "build:textbox": "npx nx build textbox",
+    "build:dropdown": "npx nx build dropdown",
+    "build:datepicker": "npx nx build datepicker",
+    "build:all": "npx nx run-many --target=build --projects=textbox,dropdown,datepicker --parallel=3",
+    "publish:all": "npm run build:all && npx nx run-many --target=build --projects=textbox,dropdown,datepicker --parallel=3 -- --publish",
     "start:app": "npx nx serve dragarwal-doodles"
   },
   "private": true,
@@ -55,6 +59,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-preset-angular": "~14.6.0",
     "jsonc-eslint-parser": "^2.1.0",
+    "marked": "^16.1.1",
     "ng-packagr": "^20.0.2",
     "nx": "21.2.3",
     "postcss": "^8.4.5",
